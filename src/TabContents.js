@@ -1,33 +1,24 @@
-import React, { useState } from 'react';
-import { AppBar, Tabs, Tab, Box } from '@mui/material';
+import React, {useEffect, useState} from 'react';
+import {  Tab, Box } from '@mui/material';
+import {TabContext, TabList, TabPanel} from '@mui/lab';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
-import Plot from 'react-plotly.js';
+import SankeyModule from "highcharts/modules/sankey";
 import axios from 'axios';
+import GoogleChartsSankey from "./GoogleChartsSankey";
+import D3ChartsSankey from "./D3ChartsSankey";
+import ReChartsSankey from "./ReChartsSankey";
+import VizXChartsSankey from "./VizXSankey";
 
-const TabPanel = (props) => {
-    const { children, value, index, ...other } = props;
-
-    return (
-        <div
-            role="tabpanel"
-            hidden={value !== index}
-            id={`tabpanel-${index}`}
-            aria-labelledby={`tab-${index}`}
-            {...other}
-        >
-            {value === index && (
-                <Box p={3}>
-                    {children}
-                </Box>
-            )}
-        </div>
-    );
-};
+SankeyModule(Highcharts);
 
 const TabsComponent = () => {
-    const [value, setValue] = useState(0);
-    const [data, setData] = useState(null);
+    const [value, setValue] = useState("1");
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetchData();
+    }, []);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -36,12 +27,13 @@ const TabsComponent = () => {
 
     const fetchData = async () => {
         try {
-            const response = await axios.post('http://localhost:8000/sankey-data/', {});
+            const response = await axios.post('https://dwh.kenyahmis.org/sankey-data', {});
             setData(response.data);
         } catch (error) {
             console.error('Error fetching data:', error);
         }
     };
+
 
     const highchartsOptions = {
         chart: {
@@ -52,52 +44,45 @@ const TabsComponent = () => {
         },
         series: [{
             keys: ['from', 'to', 'weight'],
-            data: data ? data.links.map(link => [
-                data.nodes[link.source],
-                data.nodes[link.target],
-                link.value
-            ]) : []
+            data: data ? data?.sankeyData : [],
+            type: 'sankey',
+            Name: 'Case breakdown'
         }]
     };
 
     return (
-        <div>
-            <AppBar position="static">
-                <Tabs value={value} onChange={handleChange} aria-label="sankey tabs">
-                    <Tab label="Highcharts" />
-                    <Tab label="Plotly" />
-                </Tabs>
-            </AppBar>
-            <TabPanel value={value} index={0}>
-                {data && <HighchartsReact highcharts={Highcharts} options={highchartsOptions} />}
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-                {data && (
-                    <Plot
-                        data={[{
-                            type: 'sankey',
-                            orientation: 'h',
-                            node: {
-                                pad: 15,
-                                thickness: 20,
-                                line: {
-                                    color: 'black',
-                                    width: 0.5
-                                },
-                                label: data.nodes,
-                                color: 'blue'
-                            },
-                            link: {
-                                source: data.links.map(link => link.source),
-                                target: data.links.map(link => link.target),
-                                value: data.links.map(link => link.value)
-                            }
-                        }]}
-                        layout={{ title: 'Plotly Sankey Diagram' }}
-                    />
-                )}
-            </TabPanel>
-        </div>
+        <Box>
+            <TabContext value={value}>
+                <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                    <TabList onChange={handleChange} aria-label="lab API tabs example">
+                        <Tab label="Highcharts" value="1" />
+                        <Tab label="Google Charts" value="2" />
+                        <Tab label="Plotly Charts" value="3" />
+                        <Tab label="ReCharts" value="4" />
+                        {/*<Tab label="VizX Charts" value="5" />*/}
+                    </TabList>
+                </Box>
+                <TabPanel value="1">
+                    {data && <HighchartsReact highcharts={Highcharts} options={highchartsOptions} />}
+                </TabPanel>
+                <TabPanel value="2">
+                    <GoogleChartsSankey data={data}/>
+                </TabPanel>
+                <TabPanel value="3">
+                    <D3ChartsSankey data={data}/>
+                </TabPanel>
+                <TabPanel value="4">
+                    <ReChartsSankey data={data}/>
+                </TabPanel>
+                {/*<TabPanel value="5">*/}
+                {/*    <VizXChartsSankey data={data}/>*/}
+                {/*</TabPanel>*/}
+
+
+            </TabContext>
+
+
+        </Box>
     );
 };
 

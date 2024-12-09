@@ -9,13 +9,11 @@ const GoogleChartsSankey = ({data}) => {
     const googleChartOptions = {
         sankey: {
             node: {
+                nodePadding: 20,
                 label: {
                     fontSize: 12
                 }
             },
-            link: {
-                colorMode: "gradient",
-            }
         }
     };
 
