@@ -7,7 +7,7 @@ function App() {
       <div className="App">
           <BrowserRouter>
               <Switch>
-                  <Route path="/sankey-data/options">
+                  <Route path="/">
                     <TabsComponent/>
                   </Route>
               </Switch>
