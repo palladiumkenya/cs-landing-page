@@ -22,9 +22,34 @@ const HighchartSankey = () => {
 
     const fetchData = async () => {
         try {
-            const response = await axios.post('https://dwh.nascop.org/sankey-data', {});
-            setData(response.data);
-            console.log(data)
+            const raw = JSON.stringify({});
+            const myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+
+            const requestOptions = {
+                method: "POST",
+                headers: myHeaders,
+                body: raw,
+                redirect: "follow",
+                // mode: 'no-cors',
+            };
+
+            let response = await fetch("https://dwh.nascop.org/sankey-data/sankey-data/", requestOptions)
+
+            response = await  response.json()
+            // const response = await axios({
+            //     method: 'post',
+            //     url: 'http://dwh.nascop.org/sankey-data/',
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     },
+            //     data: {
+            //         // Your POST data here
+            //     },
+            //     maxRedirects: 5 // This ensures Axios follows up to 5 redirects
+            // });
+            setData(response);
+            console.log(response)
         } catch (error) {
             console.error('Error fetching data:', error);
         }
@@ -35,10 +60,22 @@ const HighchartSankey = () => {
         let breakdown = []; // Get the breakdown data for the node
         setLoading(true)
         try{
-            const response = await axios.post('https://dwh.nascop.org/sankey-data/breakdown', {
-                node: nodeName
+            const myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+
+            const raw = JSON.stringify({
+                "node": "Total Cases Reported"
             });
-            breakdown = response.data
+
+            const requestOptions = {
+                method: "POST",
+                headers: myHeaders,
+                body: raw,
+                redirect: "follow"
+            };
+
+            let response = await fetch("https://dwh.nascop.org/sankey-data/sankey-data/breakdown", requestOptions)
+            breakdown = await response.json()
             breakdown = breakdown.map((table) => ({
                 ...table,
                 rows: table.rows.map((row, index) => ({ ...row, id: row.id || index}))

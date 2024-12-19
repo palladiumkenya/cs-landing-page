@@ -2,7 +2,7 @@
   "name": "cs-sankey-frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://dwh.nascop.org",
+  "proxy": "https://dwh.nascop.org/sankey-data",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
