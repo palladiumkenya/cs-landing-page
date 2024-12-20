@@ -64,7 +64,7 @@ const HighchartSankey = () => {
             myHeaders.append("Content-Type", "application/json");
 
             const raw = JSON.stringify({
-                "node": "Total Cases Reported"
+                "node": nodeName
             });
 
             const requestOptions = {
