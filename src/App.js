@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import TabsComponent from "./TabContents";
+import Dashboard from "./Dashboard";
 
 function App() {
   return (
@@ -8,7 +8,10 @@ function App() {
           <BrowserRouter>
               <Switch>
                   <Route path="/">
-                    <TabsComponent/>
+                    <Dashboard/>
+                  </Route>
+                  <Route path="/resources">
+
                   </Route>
               </Switch>
           </BrowserRouter>
