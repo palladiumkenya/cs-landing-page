@@ -29,6 +29,7 @@
     "react-router-dom": "5.2.0",
     "react-scripts": "5.0.1",
     "recharts": "^2.13.3",
+    "rsuite": "^5.76.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -54,5 +55,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "svelte-headless-table": "^0.18.3"
   }
 }
