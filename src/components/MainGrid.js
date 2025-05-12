@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Grid from '@mui/material/Grid2';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import HighchartSankey from "./cs/HighchartSankey";
 import Home from "./cs/Home";
 import Card from "@mui/material/Card";
@@ -10,10 +9,6 @@ export default function MainGrid() {
   return (
     <Box sx={{ width: '100%', maxWidth: { sm: '100%', md: '1700px', zoom: "90%" } }}>
         <Home />
-      {/* cards */}
-        <Typography gutterBottom variant="h3" sx={{display:"flex", ml: 3}}>
-            Triggers for Public Health Response
-        </Typography>
       <Grid
         container
         spacing={2}

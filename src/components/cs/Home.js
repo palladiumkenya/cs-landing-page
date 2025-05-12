@@ -1,10 +1,8 @@
-import {Box, CardMedia, Typography} from "@mui/material";
+import {Box, Typography} from "@mui/material";
 import  bgImg from "../assets/bg-img.png";
-import Grid from "@mui/material/Grid2";
-import Card from '@mui/material/Card';
-import CardContent from "@mui/material/CardContent";
-import CardActionArea from '@mui/material/CardActionArea';
 import accent from '../assets/accent.svg';
+import './Home.css';
+// import 
 
 const Home = () => {
     //todo: agegroup filter
@@ -12,8 +10,8 @@ const Home = () => {
     //todo: drill to detail download
 
     return (
-        <>
-            <div style={{ position: "relative", overflow: "hidden"}}>
+      <>
+        {/* <div style={{ position: "relative", overflow: "hidden"}}>
                 <img
                     src={accent}
                     alt="Accent SVG"
@@ -45,123 +43,62 @@ const Home = () => {
                     }}
                 >
                     <Typography variant="body1" sx={{fontSize: "4rem"}}>
-                        HIV Case Surveillance Dashboards
-                    </Typography>
-                    <Typography variant="body1" gutterBottom sx={{fontSize: "1.2rem"}}>
-                        Everything you need to know about HIV Case Surveillance - from real-time trends and longitudinal tracking of cohorts to geographic hotspots and public health response reports- all in one place.
+                        HIV Sentinel Events Pathways
                     </Typography>
                 </Box>
-                <Typography gutterBottom variant="h3" sx={{display: "flex", ml: 3}}>
-                    Our Products
-                </Typography>
-                <Grid
-                    container
-                    spacing={2}
-                    columns={12}
-                    mb={1}
-                    sx={{ mx: 10 }}
-                    style={{position: "relative", zIndex: 1}}
-                >
-                    <Grid item size={{lg: 3}}>
-                        <Card variant="outlined" sx={{width: "100%", minHeight: "250px", boxShadow: 6}}>
-                            <CardActionArea href={"https://dwhanalytics.kenyahmis.org/superset/dashboard/1287/"} target={"_blank"}>
-                                <CardMedia
-                                    sx={{height: 90, objectFit: "contain", objectPosition: "top center"}}
-                                    component="img"
-                                    image="/assets/cohort-dashboards.png"
-                                    title="cohort dashboards"
-                                />
-                                <CardContent>
-                                    <Typography gutterBottom component="div" sx={{fontSize: "1.2rem"}}>
-                                        Longitudinal Tracking Dashboards
-                                    </Typography>
-                                    <Typography variant="body2" sx={{
-                                        color: 'text.secondary',
-                                        display: "flex",
-                                        alignItems: "flex-start",
-                                    }}>
-                                        Dashboards that track individuals over time, highlighting gaps in care, treatment outcomes, and opportunities for public health action to improve HIV program performance.
-                                    </Typography>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
-                    </Grid>
-                    <Grid item size={{lg: 3}}>
-                        <Card variant="outlined" sx={{width: "100%", minHeight: "250px", boxShadow: 6}}>
-                            <CardActionArea href={"https://dwhanalytics.kenyahmis.org/superset/dashboard/1307/"} target={"_blank"}>
-                                <CardMedia
-                                    sx={{height: 90, objectFit: "contain", objectPosition: "top center"}}
-                                    component="img"
-                                    image="/assets/real-time.png"
-                                    title="real time"
-                                />
-                                <CardContent>
-                                    <Typography gutterBottom component="div" sx={{ fontSize: "1.2rem"}}>
-                                        Real-Time HIV Surveillance Dashboards
-                                    </Typography>
-                                    <Typography variant="body2" sx={{
-                                        color: 'text.secondary',
-                                        display: "flex",
-                                        alignItems: "flex-start",
-                                    }}>
-                                        Dashboards delivering continuously updated data to monitor HIV trends, detect gaps, and support immediate public health actions.
-                                    </Typography>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
-                    </Grid>
-                    <Grid item size={{lg: 3}}>
-                        <Card variant="outlined" sx={{width: "100%", boxShadow: 6, minHeight: "250px"}}>
-                            <CardActionArea>
-                                <CardMedia
-                                    sx={{height: 90, objectFit: "contain", objectPosition: "top center"}}
-                                    component="img"
-                                    image="/assets/hotspot.png"
-                                    title="hotspot maps"
-                                />
-                                <CardContent>
-                                    <Typography gutterBottom component="div" sx={{ fontSize: "1.2rem"}}>
-                                        Geographic Hotspot Maps
-                                    </Typography>
-                                    <Typography variant="body2" sx={{
-                                        color: 'text.secondary',
-                                        display: "flex",
-                                        alignItems: "flex-start",
-                                    }}>
-                                        Maps that visualize geographic hotspots across various surveillance indicators, guiding targeted interventions and resource allocation.
-                                    </Typography>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
-                    </Grid>
-                    <Grid item size={{lg: 3}} >
-                        <Card variant="outlined" sx={{width: "100%", boxShadow: 6, minHeight: "250px"}}>
-                            <CardActionArea>
-                                <CardMedia
-                                    sx={{height: 90, objectFit: "contain", objectPosition: "top center"}}
-                                    component="img"
-                                    image="/assets/report.png"
-                                />
-                                <CardContent>
-                                    <Typography gutterBottom component="div" sx={{fontSize: "1.2rem"}}>
-                                        Public Health Response Report
-
-                                    </Typography>
-                                    <Typography variant="body2" sx={{
-                                        color: 'text.secondary',
-                                        display: "flex",
-                                        alignItems: "flex-start",
-                                    }}>
-                                        A report summarizing public health responses to HIV surveillance data, highlighting actions taken, outcomes achieved, and areas for improvement to optimize intervention strategies.
-                                    </Typography>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
-                    </Grid>
-                </Grid>
+            </div> */}
+        <div class="banner">
+          <div class="nav-links">
+            <div class="tooltip-container">
+              <a href="https://dwhanalytics.kenyahmis.org/superset/dashboard/1307">
+                Real Time Dashboards
+              </a>
+              <div class="tooltip-text">
+                Dashboards showing continuosly updated data to monitor HIV
+                trends, detect gaps, and support immediate public health
+                response
+              </div>
             </div>
-        </>
-    )
+            <div class="tooltip-container">
+              <a href="https://maps.kenyahmis.org">Hotspot Maps</a>
+              <div class="tooltip-text">
+                Maps showing geographic hotspots across various surveillance
+                indicators, guiding targeted interventions and resource
+                allocation
+              </div>
+            </div>
+            <div class="tooltip-container">
+              <a href="https://surveillance.kenyahmis.org/">
+                Sentinel Events Pathways
+              </a>
+              <div class="tooltip-text">
+                Dashboards that visualize patient journeys and flag sentinel
+                events that point to possible clinical or programmatic gaps
+                requiring public health action.
+              </div>
+            </div>
+            <div class="tooltip-container">
+              <a href="https://dwhanalytics.kenyahmis.org/superset/dashboard/1287/">
+                Cohort Dashboards
+              </a>
+              <div class="tooltip-text">
+                Dashboards that track individuals over time, highlighting gaps
+                in care, treatment outcomes, and opportunities for public health
+                action to improve HIV program performance.
+              </div>
+            </div>
+            <div class="tooltip-container">
+              <a>Epidemic Surveillance Report</a>
+              <div class="tooltip-text">
+                A report summarising public health responses to HIV surveillance
+                data, highlighting actions taken, outcomes achieved, and areas
+                for improvement to optimise intervention strategies.
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+    );
 
 }
 export default Home

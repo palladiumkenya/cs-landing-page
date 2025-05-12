@@ -56,7 +56,7 @@ export default function AppNavbar() {
                     >
                         <CustomIcon />
                         <Typography variant="h4" component="h1" sx={{ color: 'text.primary' }}>
-                            Home
+                            HIV Sentinel Events Pathways
                         </Typography>
                     </Stack>
 
@@ -81,7 +81,7 @@ export function CustomIcon() {
 
             }}
         >
-            <img src={'/assets/dwh2.png'} alt={'logo'} width={'180px'}/>
+            <img src={'/assets/nascop-logo.png'} alt={'logo'} width={'180px'}/>
         </Box>
     );
 }
