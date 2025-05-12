@@ -1,8 +1,4 @@
-import {Box, Typography} from "@mui/material";
-import  bgImg from "../assets/bg-img.png";
-import accent from '../assets/accent.svg';
 import './Home.css';
-// import 
 
 const Home = () => {
     //todo: agegroup filter
@@ -11,42 +7,6 @@ const Home = () => {
 
     return (
       <>
-        {/* <div style={{ position: "relative", overflow: "hidden"}}>
-                <img
-                    src={accent}
-                    alt="Accent SVG"
-                    style={{
-                        position: "absolute",
-                        right: "-240px", // Move the SVG half outside the viewport
-                        top: "50%",
-                        transform: "translateY(-40%)",
-                        width: "500px", // Adjust width to ensure half is visible
-                        height: "500px", // Adjust height accordingly
-                        clipPath: "inset(0 43% 0 0)",
-                        zIndex: 0,
-                    }}
-                />
-                <Box
-                    sx={{
-                        backgroundImage: `url(${bgImg})`,
-                        backgroundRepeat: "no-repeat",
-                        backgroundSize: "cover",
-                        height: "290px",
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "center",
-                        alignItems: "flex-start",
-                        padding: "7%",
-                        mb: 1,
-                        position: "relative",
-                        zIndex: 1
-                    }}
-                >
-                    <Typography variant="body1" sx={{fontSize: "4rem"}}>
-                        HIV Sentinel Events Pathways
-                    </Typography>
-                </Box>
-            </div> */}
         <div class="banner">
           <div class="nav-links">
             <div class="tooltip-container">
