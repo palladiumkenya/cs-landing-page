@@ -48,7 +48,7 @@ const Home = () => {
               </div>
             </div>
             <div class="tooltip-container">
-              <a>Epidemic Surveillance Report</a>
+              <a href="#">Epidemic Surveillance Report</a>
               <div class="tooltip-text">
                 A report summarising public health responses to HIV surveillance
                 data, highlighting actions taken, outcomes achieved, and areas
