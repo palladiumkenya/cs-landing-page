@@ -20,7 +20,7 @@ const Home = () => {
               </div>
             </div>
             <div class="tooltip-container">
-              <a href="https://maps.analytics.org">Hotspot Maps</a>
+              <a href="https://maps.nascop.org">Hotspot Maps</a>
               <div class="tooltip-text">
                 Maps showing geographic hotspots across various surveillance
                 indicators, guiding targeted interventions and resource
