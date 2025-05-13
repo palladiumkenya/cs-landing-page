@@ -10,7 +10,7 @@ const Home = () => {
         <div class="banner">
           <div class="nav-links">
             <div class="tooltip-container">
-              <a href="https://dwhanalytics.kenyahmis.org/superset/dashboard/1307">
+              <a href="https://analytics.nascop.org/superset/dashboard/1307">
                 Real Time Dashboards
               </a>
               <div class="tooltip-text">
@@ -20,7 +20,7 @@ const Home = () => {
               </div>
             </div>
             <div class="tooltip-container">
-              <a href="https://maps.kenyahmis.org">Hotspot Maps</a>
+              <a href="https://maps.analytics.org">Hotspot Maps</a>
               <div class="tooltip-text">
                 Maps showing geographic hotspots across various surveillance
                 indicators, guiding targeted interventions and resource
@@ -28,7 +28,7 @@ const Home = () => {
               </div>
             </div>
             <div class="tooltip-container">
-              <a href="https://surveillance.kenyahmis.org/">
+              <a href="https://sentinel.nascop.org/">
                 Sentinel Events Pathways
               </a>
               <div class="tooltip-text">
@@ -38,7 +38,7 @@ const Home = () => {
               </div>
             </div>
             <div class="tooltip-container">
-              <a href="https://dwhanalytics.kenyahmis.org/superset/dashboard/1287/">
+              <a href="https://analytics.nascop.org/superset/dashboard/1287/">
                 Cohort Dashboards
               </a>
               <div class="tooltip-text">
