@@ -10,6 +10,13 @@ const Home = () => {
         <div class="banner">
           <div class="nav-links">
             <div class="tooltip-container">
+              <a href="https://insights.nascop.org">Home</a>
+              <div class="tooltip-text">
+                Project landing page with summaries of available information
+                products
+              </div>
+            </div>
+            <div class="tooltip-container">
               <a href="https://analytics.nascop.org/superset/dashboard/1307">
                 Real Time Dashboards
               </a>
