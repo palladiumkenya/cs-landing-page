@@ -4,11 +4,13 @@ import Box from '@mui/material/Box';
 import HighchartSankey from "./cs/HighchartSankey";
 import Home from "./cs/Home";
 import Card from "@mui/material/Card";
+import InfoBar from './cs/InfoBar';
 
 export default function MainGrid() {
   return (
     <Box sx={{ width: '100%', maxWidth: { sm: '100%', md: '1700px', zoom: "90%" } }}>
         <Home />
+        <InfoBar />
       <Grid
         container
         spacing={2}
